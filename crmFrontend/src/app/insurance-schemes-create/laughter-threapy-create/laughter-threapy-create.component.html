@@ -1,0 +1,43 @@
+
+<mdb-card>
+  <mdb-card-body>
+<form [formGroup]="LaughterThreapyForm" (ngSubmit)='onSubmit()'>
+<p class="h5 text-center mb-4">Laughter Threaphy</p>
+
+<div class="col-xl-6 text-xs-center">
+    <div class="card mb-3">
+      <div class="card-body">
+          <div class="md-form">
+              <i class="fa fa-calendar prefix blue-text"></i>
+              <input type="text" maxlength="50" formControlName="institutionName" #institutionName id="-institutionName" class="form-control" mdbInputDirective>
+              <label for="-institutionName">institutionName</label>
+            </div>
+
+            <div class="md-form">
+              <i class="fa fa-calendar prefix blue-text"></i>
+              <input type="text" maxlength="250" formControlName="address" #address id="-address" class="form-control" mdbInputDirective>
+              <label for="-address">address</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-calendar prefix blue-text"></i>
+              <input type="text" maxlength="12" formControlName="contactNo" #contactNo id="-contactNo" class="form-control" mdbInputDirective>
+              <label for="-contactNo">contactNo</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-calendar prefix blue-text"></i>
+              <input type="text" maxlength="30" formControlName="status" #status id="-status" class="form-control" mdbInputDirective>
+              <label for="-status">status</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-calendar prefix blue-text"></i>
+              <input type="date" formControlName="date" #date id="-date" class="form-control" mdbInputDirective>
+              <label for="-date" style="padding-left: 20%;">Date</label>
+            </div>
+          <div class="text-center">
+              <button class="btn" [disabled]="!LaughterThreapyForm.valid" mdbBtn type="submit" color="primary"  class="waves-light" mdbWavesEffect>Submit</button>
+              </div>
+
+              </div></div></div>
+</form>
+</mdb-card-body>
+</mdb-card>

@@ -1,0 +1,60 @@
+
+<mdb-card  cascade="true" narrower="true"  *ngFor = "let data of issue">
+  <div class="text-center">
+  <div class="view view-cascade  gradient-card-header purple-gradient">
+
+  <img class="img-size" src="../../../assets/download.jpg" class="float-right" alt="...">
+
+  <mdb-card-title> <h4 class="text-center"> Details Life Insurance - {{data.name}}</h4> </mdb-card-title>
+
+  </div>
+
+</div>
+
+    <!--Card content-->
+    <mdb-card-body>
+
+
+        <!--Text-->
+<div class="row">
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3"> 
+          <div class="card-body">
+            <mdb-card-text><h6>Name:<span class='float-right'>{{data.name}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Policy No:<Span class='float-right'> {{data.policyNo}}</Span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>D.O.C:<span class='float-right'>{{data.DOC | date: 'dd/MM/yyyy'}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Contact No:<span class='float-right'>{{data.contactNo}}</span></h6></mdb-card-text>
+           
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3">
+          <div class="card-body">
+            <mdb-card-text><h6> planTerm:<span class='float-right'>{{data.planTerm}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Mode:<span class='float-right'>{{data.mode}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>FUB:<span class='float-right'>{{data.FUB | date: 'dd/MM/yyyy'}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>installmentPremium :<span class='float-right'>{{data.installmentPremium}}</span></h6></mdb-card-text>
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3">
+          <div class="card-body">
+                <mdb-card-text><h6>G.S.T :<span class='float-right'>{{data.gst}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Due :<span class='float-right'>{{data.due}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6> Total Premium :<span class='float-right'>{{data.totalPremium}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6> -</h6></mdb-card-text>       
+
+          </div>
+      </div>
+  </div>
+</div>
+<div class="text-center">
+<button mdbBtn type="button" color="primary" class="waves-light" [routerLink]="['/lifeinsurance/edit', data.id]">Edit</button>
+&nbsp;&nbsp; <button mdbBtn type="button" color="red" class="waves-light" (click)="deleteLic(data.id)" >Delete</button>
+
+</div>
+</mdb-card-body>
+</mdb-card>
+

@@ -1,0 +1,41 @@
+<!-- <app-header></app-header> -->
+<div class="container">
+    <div class="jumbotron">
+        <div class="text-center">
+            <div class="row">
+                <ng-container *ngFor="let data of menuData" >
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 padding10">
+                               <!--Card-->
+                               <a>
+                                <mdb-card cascade="true" [routerLink]="[data.url]" narrower="true">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="view view-cascade  gradient-card-header blue-gradient">
+                                                <mdb-card-body cascade="true" class="text-center">
+                                                    <!--Card content-->
+                                                    <mdb-card-text>
+                                                            <mdb-icon [icon]="data.icon" size="3x"></mdb-icon><br>
+                                                    </mdb-card-text>
+                                                </mdb-card-body>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col text-left">
+                                            <mdb-card-body cascade="true" class="text-left">
+                                                <!--Card content-->
+                                                <mdb-card-text class="text-left">
+                                                    <h5>{{data.name}}</h5>
+                                                </mdb-card-text>
+                                            </mdb-card-body>
+                                            <!--/.Card content-->
+                                        </div>
+                                    </div>
+                                </mdb-card></a>
+                                <!--/.Card-->
+                            </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+

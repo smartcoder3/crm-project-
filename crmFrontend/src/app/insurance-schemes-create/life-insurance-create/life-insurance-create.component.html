@@ -1,0 +1,100 @@
+
+<mdb-card>
+  <mdb-card-body>
+    <form [formGroup]="lifeInsuranceForm" (ngSubmit)='onSubmit()'>
+      <p class="h5 text-center mb-4">Life Insurance</p>
+      <div class="row">
+        <div class="col-xl-6 text-xs-center">
+          <div class="card mb-3">
+            <div class="card-body">
+
+              <div class="md-form">
+                <i class="fa fa-calendar prefix blue-text"></i>
+                <input type="text" maxlength="20" formControlName="policyNo" #policyNo id="-policyNo" class="form-control"
+                  mdbInputDirective>
+                <label for="-policyNo">Policy Number</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="30" formControlName="name" #name id="-name" class="form-control" mdbInputDirective>
+                <label for="-name">Name</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="30" formControlName="planTerm" #planTerm id="-planTerm" class="form-control"
+                  mdbInputDirective>
+                <label for="-planTerm">Plan Terms</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="30" formControlName="mode" #mode id="-mode" class="form-control" mdbInputDirective>
+                <label for="-mode">Mode</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="10" formControlName="installmentPremium" #installmentPremium id="-installmentPremium"
+                  class="form-control" mdbInputDirective>
+                <label for="-installmentPremium">Installment Premium</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="10" formControlName="gst" #gst id="-gst" class="form-control" mdbInputDirective>
+                <label for="-gst">GST</label>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 text-xs-center">
+          <div class="card mb-3">
+            <div class="card-body">
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="10" formControlName="due" #due id="-due" class="form-control" mdbInputDirective>
+                <label for="-due">DUE</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="10" formControlName="totalPremium" #totalPremium id="-totalPremium" class="form-control"
+                  mdbInputDirective>
+                <label for="-totalPremium">Total Premium</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="number" maxlength="12" formControlName="contactNo" #contactNo id="-contactNo" class="form-control"
+                  mdbInputDirective>
+                <label for="-contactNo">Contact Number</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="date" formControlName="FUB" #FUB id="-FUB" class="form-control" mdbInputDirective>
+                <label for="-FUB" style="padding-left: 20%;">FUB</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="date" formControlName="DOC" #DOC id="-DOC" class="form-control" mdbInputDirective>
+                <label for="-DOC" style="padding-left: 20%;">DOC</label>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button class="btn" [disabled]="!lifeInsuranceForm.valid" mdbBtn type="submit" color="primary" class="waves-light" mdbWavesEffect>Submit</button>
+      </div>
+
+    </form>
+  </mdb-card-body>
+</mdb-card>

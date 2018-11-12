@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="jumbotron">
+  <div class="row">
+      <div class="col-md-12 mx-auto">
+          <h3 class="text-center">BirthDays </h3>
+          <!-- <a [routerLink]="['/todo/create']" style="border-radius:20px" class="btn-md" routerLinkActive="router-link-active"  mdbBtn color="primary" mdbWavesEffect ><mdb-icon icon="plus-square" class="mr-1"></mdb-icon>Create</a> -->
+          <div class="md-form">
+            <i class="fa fa-search prefix blue-text"></i>
+            <input type="search" [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
+            <label for="search">Search data</label>
+        </div>
+      </div>
+    </div>
+    
+      <table mdbTable striped="true" class="z-depth-1 col-md-12 mx-auto" >
+          <thead class="blue white-text">
+              <tr>
+                  <th *ngFor="let head of headElements; let i = index" scope="col" [mdbTableSort]="list" [sortBy]="headElements[i]">{{head}}
+                    <mdb-icon icon="sort"></mdb-icon>
+                  </th>
+                </tr>
+          </thead>
+          <tbody  *ngFor="let item of search();let i = index">
+            <tr mdbTableCol>
+              <th scope="row"  >{{i}}</th>
+              <td>{{item.name}}</td>
+              <td>{{item.contactNo}}</td>
+              <td>{{item.dob | date: 'dd/MM/yyyy'}}</td>
+              <!-- <td>{{item.status}}</td> -->
+              <td>{{item.weddingdate | date: 'dd/MM/yyyy'}}</td>
+              <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button mdbBtn type="button" color="primary"  style="border-radius:20px"  class="waves-light btn-sm" [routerLink]="['/todo/detail', item.id]">View Details</button>
+                </div>
+                    </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>

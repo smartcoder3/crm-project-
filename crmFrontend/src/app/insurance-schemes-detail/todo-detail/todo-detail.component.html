@@ -1,0 +1,55 @@
+
+<mdb-card  cascade="true" narrower="true"  *ngFor = "let data of issue">
+  <div class="text-center">
+  <div class="view view-cascade  gradient-card-header purple-gradient">
+
+  <img class="img-size" src="../../../assets/download.jpg" class="float-right" alt="...">
+
+  <mdb-card-title> <h4 class="text-center"> Details ToDo - {{data.name}}</h4> </mdb-card-title>
+
+  </div>
+ 
+</div>
+
+    <!--Card content-->
+    <mdb-card-body>
+
+
+        <!--Text-->
+<div class="row">
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3"> 
+          <div class="card-body">
+            <mdb-card-text><h6>Name:<span class='float-right'>{{data.name}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Contact No:<Span class='float-right'> {{data.contactNo}}</Span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Address:<span class='float-right'>{{data.address}}</span></h6></mdb-card-text>
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3">
+          <div class="card-body">
+            <mdb-card-text><h6>Reason:<span class='float-right'>{{data.reason}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6> Remarks:<span class='float-right'>{{data.remarks}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Type:<span class='float-right'>{{data.type}}</span></h6></mdb-card-text>
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3">
+          <div class="card-body">
+            <mdb-card-text><h6>Due Date:<span class='float-right'>{{data.dueDate | date: 'dd/MM/yyyy'}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6> Status:<span class='float-right'>{{data.status}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Work Allocated To:<span class='float-right'>{{data.workAllocated}}</span></h6></mdb-card-text>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="text-center">
+<button mdbBtn type="button" color="primary" class="waves-light" [routerLink]="['/todo/edit', data.id]">Edit</button>
+&nbsp;&nbsp; <button mdbBtn type="button" color="red" class="waves-light" (click)="deleteTodo(data.id)" >Delete</button>
+
+</div>
+</mdb-card-body>
+</mdb-card>
+

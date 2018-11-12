@@ -1,0 +1,63 @@
+
+<mdb-card  cascade="true" narrower="true"  *ngFor = "let data of issue">
+  <div class="text-center">
+  <div class="view view-cascade  gradient-card-header purple-gradient">
+
+  <img class="img-size" src="../../../assets/download.jpg" class="float-right" alt="...">
+
+  <mdb-card-title> <h4 class="text-center"> Details National Insurance - {{data.name}}</h4> </mdb-card-title>
+
+  </div>
+
+</div>
+
+    <!--Card content-->
+    <mdb-card-body>
+
+
+        <!--Text-->
+<div class="row">
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3"> 
+          <div class="card-body">
+            <mdb-card-text><h6>Name:<span class='float-right'>{{data.name}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>vehicle No:<Span class='float-right'> {{data.vehicleNo}}</Span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Policy No:<span class='float-right'>{{data.policyNo}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Contact No:<span class='float-right'>{{data.contactNo}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Reference:<span class='float-right'>{{data.reference}}</span></h6></mdb-card-text>
+           
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3">
+          <div class="card-body">
+            <mdb-card-text><h6> Address:<span class='float-right'>{{data.address}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>City:<span class='float-right'>{{data.city}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>From Date:<span class='float-right'>{{data.fromDate | date: 'dd/MM/yyyy'}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>To Date:<span class='float-right'>{{data.toDate | date: 'dd/MM/yyyy'}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Bill Date:<span class='float-right'>{{data.billDate | date: 'dd/MM/yyyy'}}</span></h6></mdb-card-text>
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-4 text-xs-center">
+      <div class="card mb-3">
+          <div class="card-body">
+                <mdb-card-text><h6>Insurance Type:<span class='float-right'>{{data.insuranceType}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Cover Type:<span class='float-right'>{{data.coverType}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6> Premium:<span class='float-right'>{{data.premium}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6> Code:<span class='float-right'>{{data.code}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6> -</h6></mdb-card-text>       
+
+          </div>
+      </div>
+  </div>
+</div>
+<div class="text-center">
+<button mdbBtn type="button" color="primary" class="waves-light" [routerLink]="['/nationalinsurance/edit', data.id]">Edit</button>
+&nbsp;&nbsp; <button mdbBtn type="button" color="red" class="waves-light" (click)="deleteNationalInsurance(data.id)" >Delete</button>
+
+</div>
+</mdb-card-body>
+</mdb-card>
+

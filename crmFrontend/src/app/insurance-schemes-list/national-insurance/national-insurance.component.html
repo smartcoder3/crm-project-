@@ -1,0 +1,39 @@
+
+<div class="container">
+    <div class="jumbotron">
+<div class="row">
+    <div class="col-md-12 mx-auto">
+      <h3 class="text-center">National insurance - Protect the Driver!</h3>
+      <a [routerLink]="['/nationalinsurance/create']" style="border-radius:20px" class="btn-md" routerLinkActive="router-link-active"  mdbBtn color="primary" mdbWavesEffect ><mdb-icon icon="plus-square" class="mr-1"></mdb-icon>Create</a>
+      <div class="md-form">
+        <i class="fa fa-search prefix blue-text"></i>
+        <input type="text" [(ngModel)]="searchText" class="form-control" id="search" mdbInputDirective>
+        <label for="search">Search</label>
+      </div>
+    </div>
+  </div>
+
+  <table mdbTable striped="true" class="z-depth-1 col-md-12 mx-auto" >
+      <thead class="blue white-text">
+          <tr>
+              <th *ngFor="let head of headElements; let i = index" scope="col" [mdbTableSort]="list" [sortBy]="headElements[i]">{{head}}
+                <mdb-icon icon="sort"></mdb-icon>
+              </th>
+            </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let item of search();let i = index">
+          <th scope="row">{{i}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.vehicleNo}}</td>
+          <td>{{item.policyNo}}</td>
+          <td>{{item.fromDate | date: 'yyyy/MM/dd'}}</td>
+          <td>{{item.toDate | date: 'yyyy/MM/dd'}}</td>
+          <td><div class="btn-group" role="group" aria-label="Basic example">
+              <button mdbBtn type="button" color="primary"  style="border-radius:20px"  class="waves-light btn-sm" mdbWavesEffect [routerLink]="['/nationalinsurance/detail', item.id]">View Details</button>
+            </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

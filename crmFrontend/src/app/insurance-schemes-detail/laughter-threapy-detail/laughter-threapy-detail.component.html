@@ -1,0 +1,40 @@
+
+<!--Card-->
+<mdb-card  cascade="true" narrower="true"  *ngFor = "let data of issue">
+  <div class="text-center">
+  <div class="view view-cascade  gradient-card-header purple-gradient">
+
+  <img class="img-size" src="../../../assets/download.jpg" class="float-right" alt="...">
+
+  <mdb-card-title> <h4 class="text-center"> Details Laughter Threapy -{{data.institutionName}} </h4> </mdb-card-title>
+
+  </div>
+
+</div>
+
+
+<!--Card content-->
+    <mdb-card-body >
+
+
+        <!--Text-->
+<div class="row">
+  <div class="col-xl-12 text-xs-center">
+      <div class="card mb-3"> 
+          <div class="card-body">
+            <mdb-card-text><h6>Institution Name:<span class='float-right'>{{data.institutionName}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Address:<Span class='float-right'> {{data.address}}</Span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Date:<span class='float-right'>{{data.date | date :'dd/MM/yyyy'}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Status:<span class='float-right'>{{data.status}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Contact No:<span class='float-right'>{{data.contactNo}}</span></h6></mdb-card-text>
+           
+          </div>
+      </div>
+      <div class="text-center">
+          <button mdbBtn type="button" color="primary" class="waves-light" [routerLink]="['/laughterthreapy/edit', data.id]">Edit</button>
+          &nbsp;&nbsp; <button mdbBtn type="button" color="red" class="waves-light" (click)="deleteLaughterThreapy(data.id)" >Delete</button>
+ 
+        </div>
+  </div>
+  </div>
+  </mdb-card-body>

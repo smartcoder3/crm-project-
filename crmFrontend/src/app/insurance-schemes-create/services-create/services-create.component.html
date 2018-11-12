@@ -1,0 +1,119 @@
+
+<mdb-card>
+  <mdb-card-body>
+    <form [formGroup]="servicesForm" (ngSubmit)='onSubmit()'>
+      <p class="h5 text-center mb-4">Service</p>
+      <div class="row">
+        <div class="col-xl-6 text-xs-center">
+          <div class="card mb-3">
+            <div class="card-body">
+
+              <div class="md-form">
+                <i class="fa fa-calendar prefix blue-text"></i>
+                <input type="text" maxlength="30" formControlName="name" #name id="-name" class="form-control" mdbInputDirective>
+                <label for="-name">Name</label>
+              </div>
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="number" maxlength="12" formControlName="contactNo" #contactNo id="-contactNo" class="form-control"
+                  mdbInputDirective>
+                <label for="-contactNo">Contact Number</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="50" formControlName="email" #email id="-email" class="form-control" mdbInputDirective>
+                <label for="-email">Email</label>
+              </div>
+
+              <div class="md-form">
+                  <i class="fa fa-user prefix blue-text"></i>
+                  <input type="text" maxlength="100" formControlName="purpose" #purpose id="-purpose" class="form-control"
+                    mdbInputDirective>
+                  <label for="-purpose">Purpose</label>
+                </div>
+
+                <div class="md-form">
+                  <i class="fa fa-user prefix blue-text"></i>
+                  <!-- <input type="text" formControlName="status" #status id="-status" class="form-control" mdbInputDirective> -->
+                  <select style="padding-left:7%" type="text" formControlName="status" #status id="-status" class="form-control"
+                  mdbInputDirective>
+                  <option value="Going on">Going On</option>
+                  <option value="Document Pending">Document Pending</option>
+                  <option value="Completed">Completed</option>
+                </select>
+                  <label for="-status">Status</label>
+                </div>
+
+
+              <div class="md-form">
+                <i class="fa fa-user prefix blue-text"></i>
+                <input type="text" maxlength="250" formControlName="address" #address id="-address" class="form-control"
+                  mdbInputDirective>
+                <label for="-address">Address</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6 text-xs-center">
+          <div class="card mb-3">
+            <div class="card-body">
+
+              <div class="md-form">
+                  <i class="fa fa-user prefix blue-text"></i>
+                  <input type="date" formControlName="dob" #dob id="-dob" class="form-control" mdbInputDirective>
+                  <label for="-dob" style="padding-left: 20%;">DOB</label>
+                </div>
+
+                <div class="md-form">
+                  <i class="fa fa-user prefix blue-text"></i>
+                  <input type="date" formControlName="weddingdate" #weddingdate id="-weddingdate" class="form-control"
+                    mdbInputDirective>
+                  <label for="-weddingdate" style="padding-left: 20%;">Wedding Date</label>
+                </div>
+
+              <div class="md-form">
+                <i class="fa fa-calendar prefix blue-text"></i>
+                <input type="date" formControlName="duedate" #duedate id="-duedate" class="form-control"
+                  mdbInputDirective>
+                <label for="-duedate" style="padding-left: 20%;">Due Date</label>
+              </div>
+
+              <div class="md-form">
+                  <i class="fa fa-user prefix blue-text"></i>
+                  <select style="padding-left:7%" formControlName="reason" #reason id="-reason" class="form-control"
+                    mdbInputDirective>
+                    <option value="NationlInsurance">Nationl Insurance</option>
+                    <option value="LifeInsurance">Life Insurance</option>
+                    <option value="LicHfl">LicHFL</option>
+                    <option value="LaughterThreapy">Laughter Threapy</option>
+                    <option value="others">Others(Specified in Purpose)</option>
+                  </select>
+                  <label for="-reason">Reason</label>
+                </div>
+
+               <div class="md-form">
+                  <i class="fa fa-user prefix blue-text"></i>
+                  <select style="padding-left:7%" type="text" formControlName="type" #type id="-type" class="form-control"
+                    mdbInputDirective>
+                    <option value="Urgent">Urgent</option>
+                    <option value="Normal">Normal</option>
+                  </select>
+                  <label for="-type">Type</label>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="text-center">
+        <button class="btn"  [disabled]="!servicesForm.valid"  mdbBtn type="submit" color="primary" class="waves-light" mdbWavesEffect>Submit</button>
+
+      </div>
+
+    </form>
+  </mdb-card-body>
+</mdb-card>

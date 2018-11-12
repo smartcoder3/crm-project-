@@ -1,0 +1,124 @@
+
+<mdb-card>
+  <mdb-card-body>
+      <form [formGroup]="nationalInsuranceUpdateForm" (ngSubmit)='onUpdate()'>
+          <p class="h5 text-center mb-4">National Insurance - Edit</p>
+          <div class="row">
+            <div class="col-xl-6 text-xs-center">
+              <div class="card mb-3">
+                <div class="card-body">
+
+                  <div class="md-form">
+                    <i class="fa fa-calendar prefix blue-text"></i>
+                    <input type="text" maxlength="30" formControlName="name" #name id="-name" class="form-control" mdbInputDirective>
+                    <label for="-name">Name</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="text" maxlength="20" formControlName="vehicleNo" #vehicleNo id="-vehicleNo" class="form-control"
+                      mdbInputDirective>
+                    <label for="-vehicleNo">Vehicle Number</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="text" maxlength="30" formControlName="policyNo" #policyNo id="-policyNo" class="form-control"
+                      mdbInputDirective>
+                    <label for="-policyNo">Policy Number</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="text" maxlength="50" formControlName="reference" #reference id="-reference" class="form-control"
+                      mdbInputDirective>
+                    <label for="-reference">Reference</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="number" maxlength="12" formControlName="contactNo" #contactNo id="-contactNo" class="form-control"
+                      mdbInputDirective>
+                    <label for="-contactNo">Contact Number</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="text" maxlength="250" formControlName="address" #address id="-address" class="form-control"
+                      mdbInputDirective>
+                    <label for="-address">Address</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="text" maxlength="30" formControlName="city" #city id="-city" class="form-control" mdbInputDirective>
+                    <label for="-city">City</label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-6 text-xs-center">
+              <div class="card mb-3">
+                <div class="card-body">
+
+                 <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="text" maxlength="20" formControlName="insuranceType" #insuranceType id="-insuranceType" class="form-control"
+                      mdbInputDirective>
+                    <label for="-insuranceType">Insurance Type</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="text" maxlength="20" formControlName="coverType" #coverType id="-coverType" class="form-control"
+                      mdbInputDirective>
+                    <label for="-coverType">Cover Type</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="number" maxlength="10" formControlName="premium" #premium id="-premium" class="form-control"
+                      mdbInputDirective>
+                    <label for="-premium">Premium</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="number" maxlength="10" formControlName="code" #code id="-code" class="form-control" mdbInputDirective>
+                    <label for="-code">Code</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="date" formControlName="billDate" #billDate id="-billDate" class="form-control"
+                      mdbInputDirective>
+                    <label for="-billDate" style="padding-left: 20%;">Bill Date</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="date" formControlName="fromDate" #fromDate id="-fromDate" class="form-control"
+                      mdbInputDirective>
+                    <label for="-fromDate" style="padding-left: 20%;">From Date</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix blue-text"></i>
+                    <input type="date" formControlName="toDate" #toDate id="-toDate" class="form-control" mdbInputDirective>
+                    <label for="-toDate" style="padding-left: 20%;">To Date</label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="text-center">
+          <button class="btn"  [disabled]="!nationalInsuranceUpdateForm.valid" mdbBtn type="submit" color="primary" class="waves-light" mdbWavesEffect>Submit</button>
+       </div>
+
+</form>
+</mdb-card-body>
+</mdb-card>

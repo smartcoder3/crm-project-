@@ -1,0 +1,25 @@
+<div class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="../../assets/download.jpg" width="150px" class="user-avatar" />
+            <h1>Jude CRM - Login</h1>
+            <form [formGroup]="loginForm">
+                <div class="md-form">
+                    <input type="email" formControlName="email" #email id="-email" class="form-control"
+                        mdbInputDirective>
+                    <label for="-userName">UserName</label>
+                </div>
+                <div class="md-form">
+                    <input type="password" formControlName="password" #password id="-password" class="form-control"
+                        mdbInputDirective>
+                    <label for="-password">Password</label>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-md btn-outline-primary" style="border-radius:25px;" mdbBtn type="submit"
+                        (click)="tryLogin(loginForm.value)" color="blue" class="waves-light" mdbWavesEffect>Login!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+
+<mdb-card  cascade="true" narrower="true"  *ngFor = "let data of issue">
+  <div class="text-center">
+  <div class="view view-cascade  gradient-card-header blue-gradient" >
+
+  <img class="img-size" src="../../../assets/download.jpg" class="float-right" alt="...">
+
+  <mdb-card-title> <h4 class="text-center"> Details - LIC HFL</h4> </mdb-card-title>
+
+  </div>
+
+</div>
+
+
+<!--Card content-->
+    <mdb-card-body >
+
+
+        <!--Text-->
+<div class="row">
+  <div class="col-xl-12 text-xs-center">
+      <div class="card mb-3"> 
+          <div class="card-body">
+            <mdb-card-text><h6>House Value:<span class='float-right'>{{data.houseValue |currency:"₹"}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Land Value:<Span class='float-right'> {{data.landValue |currency:"₹"}}</Span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Monthly Income:<span class='float-right'>{{data.monthlyIncome |currency:"₹"}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Yearly Income:<span class='float-right'>{{data.yearlyIncome |currency:"₹"}}</span></h6></mdb-card-text><hr>
+            <mdb-card-text><h6>Contact No:<span class='float-right'>{{data.contactNo}}</span></h6></mdb-card-text>
+           
+          </div>
+      </div>
+      <div class="text-center">
+          <button mdbBtn type="button" color="primary" class="waves-light" [routerLink]="['/lichfl/edit', data.id]">Edit</button>
+          &nbsp;&nbsp; <button mdbBtn type="button" color="red" class="waves-light" (click)="deletelichfl(data.id)" >Delete</button>
+  
+        </div>
+  </div>
+  </div>
+  </mdb-card-body>
